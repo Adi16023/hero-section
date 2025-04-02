@@ -61,7 +61,7 @@ const HeroSection = () => {
 
       {/* Gradient Section */}
       <motion.div
-        className="w-full mt-12 bg-gradient-to-r from-[rgba(177,6,15,0.3)] to-white rounded-2xl p-6 md:p-12"
+        className="w-full mt-12 bg-gradient-to-br from-[rgba(177,6,15,0.3)] via-white to-[rgba(177,6,15,0.3)] rounded-2xl p-6 md:p-12"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.6 }}
