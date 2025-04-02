@@ -1,12 +1,17 @@
-# React + Vite
+# 🚀 React + Vite + Tailwind CSS + Framer Motion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was built using **React** with **Vite** for faster builds and a better development experience.  
+It also leverages **Tailwind CSS** for responsive styling and **Framer Motion** for animations and transitions.
 
-Currently, two official plugins are available:
+## 🛠️ Tech Stack
+- **React + Vite** ⚡ – Fast builds and hot module replacement (HMR)
+- **Tailwind CSS** 🎨 – Utility-first styling for responsiveness
+- **Framer Motion** 🎭 – Smooth animations and transitions
+- **ESLint** 🛡️ – Ensures clean and maintainable code
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Installation & Setup
+Clone the repository and install dependencies:
+```sh
+git clone https://github.com/Adi16023/hero-section.git
+cd hero-section
+npm install
