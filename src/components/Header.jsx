@@ -53,18 +53,25 @@ const Header = () => {
           </a>
         </nav>
 
-        <button className="custom hidden md:block text-[#B1060F] rounded-lg hover:bg-red-500 transition">
-          <Call fontSize="small" className="mr-1" /> Speak with our Experts
-        </button>
+        <div className="flex items-center space-x-4">
+          <button className="custom hidden md:block text-[#B1060F] rounded-lg hover:bg-red-500 transition">
+            <Call fontSize="small" className="mr-1" /> Speak with our Experts
+          </button>
 
-        {/* Mobile Menu Toggle */}
-        <button className="md:hidden menu" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? (
-            <Icon icon="lets-icons:close-round" fontSize="large" />
-          ) : (
-            <Icon icon="heroicons-outline:menu-alt-3" fontSize="large" />
-          )}
-        </button>
+          {/* Mobile Call Us Button */}
+          <button className="custom md:hidden text-xs text-[#B1060F] px-4 py-2 rounded-lg">
+            Speak with our Experts
+          </button>
+
+          {/* Mobile Menu Toggle */}
+          <button className="md:hidden menu" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? (
+              <Icon icon="lets-icons:close-round" fontSize="large" />
+            ) : (
+              <Icon icon="heroicons-outline:menu-alt-3" fontSize="large" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -89,9 +96,6 @@ const Header = () => {
               <Icon icon="mdi:crown" className="mr-1 text-yellow-500 text-lg" />{" "}
               Ambitio Elite
             </a>
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
-              Call Us
-            </button>
           </nav>
         </div>
       )}
