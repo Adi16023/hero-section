@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   Menu as MenuIcon,
   Close as CloseIcon,
@@ -14,7 +15,12 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-white w-full fixed left-0 top-0 z-50">
+    <motion.header
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="bg-white w-full fixed left-0 top-0 z-50"
+    >
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo Switch: Full Logo on Desktop, Min Logo on Mobile */}
         <div className="text-2xl font-bold">
@@ -28,40 +34,63 @@ const Header = () => {
         <nav className="hidden md:flex space-x-6">
           {/* First three links with dropdown icon */}
           {["Study-abroad", "Bootcamps", "Products"].map((item, index) => (
-            <a
+            <motion.a
               key={index}
               href="#"
               className="flex items-center text-gray-700 hover:text-black"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.2,
+                ease: "easeOut",
+              }}
             >
               {item}{" "}
               <ExpandMore fontSize="small" className="ml-1 text-[#B1060F]" />
-            </a>
+            </motion.a>
           ))}
-          <a
+          <motion.a
             href="#"
             className="flex items-center text-gray-700 hover:text-black"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
           >
             <Diamond fontSize="small" className="mr-1 text-[#B1060F]" /> Ambitio
             Pro
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="#"
             className="flex items-center text-gray-700 hover:text-black"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1, ease: "easeOut" }}
           >
             <Icon icon="mdi:crown" className="mr-1 text-lg text-[#B1060F]" />
             Ambitio Elite
-          </a>
+          </motion.a>
         </nav>
 
         <div className="flex items-center space-x-4">
-          <button className="custom hidden md:block text-[#B1060F] rounded-lg hover:bg-red-500 transition">
+          <motion.button
+            className="custom hidden md:block text-[#B1060F] rounded-lg hover:bg-red-500 transition"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+          >
             <Call fontSize="small" className="mr-1" /> Speak with our Experts
-          </button>
+          </motion.button>
 
           {/* Mobile Call Us Button */}
-          <button className="custom md:hidden text-xs text-[#B1060F] px-4 py-2 rounded-lg">
+          <motion.button
+            className="custom md:hidden text-xs text-[#B1060F] px-4 py-2 rounded-lg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
+          >
             Speak with our Experts
-          </button>
+          </motion.button>
 
           {/* Mobile Menu Toggle */}
           <button className="md:hidden menu" onClick={() => setIsOpen(!isOpen)}>
@@ -76,30 +105,43 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-md p-4">
+        <motion.div
+          className="md:hidden bg-white shadow-md p-4"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           <nav className="flex flex-col space-y-4 text-base">
-            {/* First three links with dropdown icon */}
             {["Study-abroad", "Bootcamps", "Products"].map((item, index) => (
-              <a
+              <motion.a
                 key={index}
                 href="#"
                 className="flex items-center text-gray-700 hover:text-blue-500"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.3,
+                  ease: "easeOut",
+                }}
               >
                 {item} <ExpandMore fontSize="small" className="ml-1" />
-              </a>
+              </motion.a>
             ))}
-            {/* Ambitio Elite with Crown Iconify */}
-            <a
+            <motion.a
               href="#"
               className="flex items-center text-gray-700 hover:text-blue-500"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
             >
-              <Icon icon="mdi:crown" className="mr-1 text-yellow-500 text-lg" />{" "}
+              <Icon icon="mdi:crown" className="mr-1 text-yellow-500 text-lg" />
               Ambitio Elite
-            </a>
+            </motion.a>
           </nav>
-        </div>
+        </motion.div>
       )}
-    </header>
+    </motion.header>
   );
 };
 
